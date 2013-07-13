@@ -10,7 +10,21 @@ take a peek at the other `weechat-` repositories on
 
 ### eval
 
+Run Ruby code.
+
 **Commands**
 
-* eval - Evaluate Ruby code and output the result to the current buffer.
+* `eval` - Evaluate Ruby code and output the result to the current buffer.
+
+### online-notifier
+
+Runs a script when a user comes online, caught via irc_nick_back tag,
+presently hard-coded for needs.
+
+**Commands**
+
+* `notifier`
+  * `enable` - enable online notifications
+  * `disable` - disable online notifications
+  * `once` - notify only on the next occurrence, then disable
 
