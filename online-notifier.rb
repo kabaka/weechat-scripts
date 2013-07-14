@@ -25,17 +25,18 @@ def weechat_init
   Weechat.hook_command 'notifier', 'Interact with the online notifier script.',
     'enable | once | disable',
     [
-      'enable: enable online notifications',
-      'once: notify only on the next occurrence, then disable',
+      ' enable: enable online notifications',
+      '   once: notify only on the next occurrence, then disable',
       'disable: disable online notifications'
     ].join("\n"),
     'enable || once || disable',
     'notifier_cmd_callback', ''
 
   # Hard-coded my better half, here, since this is why I wrote the script.
-  # Since this operates on irc_nick_back, it only works with open queries with
-  # users that have sent you a message.
-  Weechat.hook_print '', 'irc_nick_back', 'Unnr', 0, 'online_callback', ''
+  target = 'Unnr'
+
+  Weechat.hook_print '', 'irc_nick_back',  target, 0, 'online_callback', ''
+  Weechat.hook_print '', "nick_#{target}", '',     0, 'online_callback', ''
 
   @state = :disabled
 
