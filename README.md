@@ -16,10 +16,10 @@ Run Ruby code.
 
 * `eval` - Evaluate Ruby code and output the result to the current buffer.
 
-### online-notifier
+### notifier
 
-Runs a script when a user comes online, caught via irc_nick_back tag,
-presently hard-coded for needs.
+Runs a shell command when a message matches tags and optionally a text mask.
+For more help, see `/set plugins.desc.ruby.notifier.*`.
 
 **Commands**
 
