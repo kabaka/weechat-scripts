@@ -50,6 +50,10 @@ def weechat_init
       '  nick_Kabaka'
     ].join("\n")
 
+  Weechat.bar_item_new 'notifier', 'bar_item_update', ''
+
+  Weechat.bar_item_update @bar_item_name
+
   Weechat.hook_print '', '', '', 0, 'notifier_hook_callback', ''
 
   @state = :disabled
@@ -80,7 +84,20 @@ def notifier_cmd_callback data, buffer, args
 
   end
 
+  Weechat.bar_item_update 'notifier'
+
   Weechat::WEECHAT_RC_OK
+end
+
+def bar_item_update data, item, window
+  case @state
+  when :enabled
+    "#{Weechat.color 'green'}Notifier: Enabled#{Weechat.color 'reset'}"
+  when :once
+    "#{Weechat.color 'yellow'}Notifier: Once#{Weechat.color 'reset'}"
+  else
+    ''
+  end
 end
 
 def notifier_hook_callback data, buffer, date, tags,
