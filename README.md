@@ -16,6 +16,16 @@ Run Ruby code.
 
 * `eval` - Evaluate Ruby code and output the result to the current buffer.
 
+### lastline
+
+Scroll through printed messages in the input area.
+
+**Commands**
+
+* `lastline`
+  * `next` - move to next message in history
+  * `previous` - move to previous message in history
+
 ### notifier
 
 Runs a shell command when a message matches tags and optionally a text mask.
