@@ -47,7 +47,7 @@ def lastline_cmd_callback data, buffer, args
     new_input = get_previous buffer
 
   else
-    return Weechat::WEECHAR_RC_ERROR
+    return Weechat::WEECHAT_RC_ERROR
 
   end
 

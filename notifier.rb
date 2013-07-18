@@ -80,7 +80,7 @@ def notifier_cmd_callback data, buffer, args
       "Notifications #{Weechat.color 'yellow'}enabled for one occurrence#{Weechat.color 'reset'}."
 
   else
-    return Weechat::WEECHAR_RC_ERROR
+    return Weechat::WEECHAT_RC_ERROR
 
   end
 
